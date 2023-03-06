@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import "./styles/style.css"
+import logo from "./assets/logo.png"
+import imgPlay from "./assets/seta_play.png"
+import Header from "./components/Header";
+import Flashcards from "./components/Flashcards";
+import Footer from "./components/Footer";
+import styled from "styled-components";
+import { useState } from "react";
 
 function App() {
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Header  logo={logo}/>
+      <Flashcards imgPlay={imgPlay} />
+      <Footer />
+    </Container>
   );
 }
+
+const Container = styled.div`
+    background-color: #FB6B6B;
+    height: 100vw;
+    width: 375px;
+    margin: 0 auto;
+`
 
 export default App;
