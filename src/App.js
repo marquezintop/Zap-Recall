@@ -8,15 +8,19 @@ import cards from "./components/cards";
 
 function App() {
 
+  const [counter, setCounter] = useState(0)
+  
+  console.log(counter)
+
   return (
     <>
     <Container>
       <Header  logo={logo}/>
       {cards.map((p, i) => (
-        <Flashcard num={i+1} question={p.question} answer={p.answer}/>
+        <Flashcard num={i+1} question={p.question} answer={p.answer} setCounter={setCounter} counter={counter}/>
       ))}
     </Container>
-    <Footer />
+    <Footer counter={counter}/>
     </>
   );
 }

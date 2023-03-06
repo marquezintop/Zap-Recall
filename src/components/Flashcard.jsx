@@ -5,8 +5,10 @@ import imgFlip from "../assets/seta_virar.png"
 import wrongIcon from "../assets/icone_erro.png"
 import almostIcon from "../assets/icone_quase.png"
 import rightIcon from "../assets/icone_certo.png"
+import arrayCounter from "./arrayCounter"
 
-export default function Flashcards({num, question, answer}) {
+export default function Flashcards({num, question, answer, counter, setCounter}) {
+
 
     let initialContent = (
         <>
@@ -41,6 +43,8 @@ export default function Flashcards({num, question, answer}) {
 
     function didntRemember() {
         SetConclude(true)
+        arrayCounter.push(1)
+        setCounter(arrayCounter.length)
         SetResult("wrong")
         SetFliped(false)
         SetContent(<>
@@ -52,6 +56,8 @@ export default function Flashcards({num, question, answer}) {
 
     function almostNotRemembered() {
         SetConclude(true)
+        arrayCounter.push(1)
+        setCounter(arrayCounter.length)
         SetResult("almostWrong")
         SetFliped(false)
         SetContent(<>
@@ -63,6 +69,9 @@ export default function Flashcards({num, question, answer}) {
 
     function zap() {
         SetConclude(true)
+        arrayCounter.push(1)
+        console.log(arrayCounter)
+        setCounter(arrayCounter.length)
         SetResult("right")
         SetFliped(false)
         SetContent(<>
